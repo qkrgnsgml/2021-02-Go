@@ -1,0 +1,347 @@
+git status시 나오는 문구
+Untracked files:
+등록되지 않은 파일
+
+on br
+
+working directory -> add -> staging area -> commit
+
+git status
+변경사항을 보여준다
+
+git add 종류
+git add 파일 이름
+git add *.* 모든 파일 넣기
+git add *.html html확장자 전부 넣기
+
+vi
+
+대문자 V 한줄 선택
+yp 한줄 복사
+dd 한줄 삭제
+
+git commit시 긴 메세지를 남기고 싶을 때는 -m을 사용하지 말고 윗줄에 쓰면된다
+<-여기에 쓰면된다
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#       modified:   index.html
+#
+# Untracked files:
+#       index3.html
+#
+~
+
+
+git commit -a -m "index.html file modify"
+add랑 커밋도 같이해준다 "한번이상 등록된 파일이여야됨"
+
+--cached
+대부분 stage 영역에 관여하는 명령어
+
+git diff
+working directory 와 stage 사이의 차이점을 표시함
+git diff -cached
+stage 와 commit 사이의 차이점을 표시함
+
+git diff HEAD
+전체의 차이점 3영역간의 차이점을 보여준다.
+
+git branch
+현재 branch의 갯수 확인
+
+git branch 이름
+설정한 이름으로 branch 생성
+
+git checkout job_A
+job_A로 branch 이동
+
+git checkout -
+이전의 branch로 이동한다.
+
+git checkout -b job-C
+branch 생성과 동시에 switch 시켜준다.
+
+git clone 만든 폴더는
+branch 까지 모두 가져온다 (원격연결이 되있다).
+
+http://www.gitignore.io
+git ignore 설정해주는 사이트
+
+touch .gitignore
+git ignore 설정을 해주는 파일 (불필요한 파일들을 추적하지 않는다.)
+
+
+
+
+
+
+
+git diff        워킹트리에 있는 내용과 스테이징 내용이 같은지 다른지 확인할수 있다
+git diff --cached    스테이징영역과 커밋의 내용이 같은지 다른지 확인할수 있다
+git diff HEAD        워킹트리, 스테이징영역, 커밋의 전체차이를 보여준다
+ 
+기본적인 작업 과정은 다음과 같다
+ 
+파일생성 -> 파일수정 -> 저장소에 제출 -> 파일생성 or 추가   (반복)
+ 
+워킹트리에서 작업을 거친후
+add 명령어를 통하여 스테이징 영역으로 제출을 하고
+commit 명령어를 통하여 커밋한다
+ 
+git commit   =   다중의 메세지를 직접 입력할수 있다 주로 여러줄을 작성할때 씀
+git commit -m "메세지"   =   간단한 메세지를 입력하여 커밋해줌
+ 
+git commit *.*   =   이름, 확장자 상관없이 커밋
+git commit *.html   =   html 확장자를 갖고 있는 것 만 커밋
+ 
+git config --global user.name "201344085_LyuSeongMin"   작업이나 커밋을 하는 사람의 이름을 확인할 수 있도록 설정
+git config --global user.email "j1344085@naver.com"   작업이나 커밋을 하는 사람의 메일을 확인할 수 있도록 설정
+git config --global color.ui auto   작업의 ui 환경을 자동으로 이쁘게 만들어줌
+git config --global --list   위의 세가지 상태를 볼수있음
+ 
+git log -p 로그를 볼때 diff 까지 실행하여 세부사항까지 볼수 있도록 실행해줌
+ 
+일반적으로 로컬저장소 사용을 위한 방법은 크게 2가지 이다
+1. 직접만들어서 git  init 명령어를 통한 초기화
+2. 이미 만들어진 저장소를 git clone 명령어를 통해 가져와 사용
+ 
+git clone https://github.com/jerry10004/project1
+= 일반적으로 git의 주소는 https://github.com/사용자아이디/저장소이름 으로 작성이 되는데
+   git  clone 명령어를 통하여서 말 그대로 clone(복제)
+   위에 예시 는 장교수님의 저장소를 복사한다
+ 
+ 
+touch index.php   / 파일 생성
+touch index2.php  / 파일 생성
+git add *.php   / 확장자가 php인 파일 전부를 에딩
+git status   / 상태 확인
+git rm --cached index2.php   / 커밋을 하나씩 할 수 없으니깐 혹은 실수로 에딩하였을때 다시 추적 안하게 만듬
+git status   / 상태 확인
+ 
+ 
+git commit  -a -m   / 한번 생성한 파일을 add와 commit 을 동시에 하기위한 명령어 (-a) + 메세지 한줄 입력 (-m)
+ 
+ 
+폴더 mygitroom 을 만든다.
+§해당 폴더로 이동한다.
+§해당 폴더를 git repository로 초기화한다.
+§Index.html을 만들어 자신의 이름, 학번, 간단한 소개를 작성한다(3줄 이상).
+§현재 리포지토리 상태를 확인한다.
+§Index.html 파일을 스테이지에 등록한다.
+§현재 리포지토리 상태를 확인한다.
+§스테이지에 있는 파일을 “index.html 파일 등록”이라는 메시지로 커밋을 한다.
+§현재 리포지토리  로그를 확인한다.
+§Index.html 파일 마지막에 자신의 거주지를 동까지만 입력하여 수정한다.
+§현재 리포지토리 상태를 확인한다.
+§Working tree와 최신 commit  과의 차이를 확인한다.
+§스테이지에 파일을 등록한다.
+§스테이지 영역 파일과 최신 commit과의 차이를 확인한다.
+§스테이지에 있는 파일을 “index.html 파일 :거주지 추가”라는 메시지로 커밋을 한다.
+§현재 리포지토리  로그를 확인한다.
+ 
+ 
+ 
+403@4-403-05 MINGW32 ~
+$ pwd
+/c/Users/403
+ 
+403@4-403-05 MINGW32 ~
+$ cd mygit
+ 
+403@4-403-05 MINGW32 ~/mygit
+$ mkdir mygitroom
+ 
+403@4-403-05 MINGW32 ~/mygit
+$ cd mygitroom
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom
+$ git init
+Initialized empty Git repository in C:/Users/403/myGit/mygitroom/.git/
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ vi index.html
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git status
+On branch master
+Initial commit
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+nothing added to commit but untracked files present (use "git add" to track)
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git add index.html
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory.
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git status
+On branch master
+Initial commit
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git commit -m "index.html 파일 등록"
+[master (root-commit) 7f1c9fb] index.html 파일 등록
+ 1 file changed, 5 insertions(+)
+ create mode 100644 index.html
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git log
+commit 7f1c9fb5855963212486c3ee8ebc0b2d2a8860db
+Author: 201344085_LyuSeongMin <j1344085@naver.com>
+Date:   Fri Sep 9 18:36:37 2016 +0900
+    index.html 파일 등록
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ vi index.html
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+        modified:   index.html
+no changes added to commit (use "git add" and/or "git commit -a")
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git diff
+diff --git a/index.html b/index.html
+index 4ed3c6b..9b95afb 100644
+--- a/index.html
++++ b/index.html
+@@ -2,4 +2,5 @@
+        echo "학번 : 201344085";
+        echo "이름 : 류성민";
+        echo "인하공업전문대학 류성민 입니다";
++       echo "거주지 : 대한민국 인천광역시 남구 학익동";
+ ?>
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory.
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git add index.html
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory.
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git diff --cached
+diff --git a/index.html b/index.html
+index 4ed3c6b..9b95afb 100644
+--- a/index.html
++++ b/index.html
+@@ -2,4 +2,5 @@
+        echo "학번 : 201344085";
+        echo "이름 : 류성민";
+        echo "인하공업전문대학 류성민 입니다";
++       echo "거주지 : 대한민국 인천광역시 남구 학익동";
+ ?>
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git commit  -m "index.html 파일 :거주지 추가"
+[master e18e0a0] index.html 파일 :거주지 추가
+ 1 file changed, 1 insertion(+)
+ 
+403@4-403-05 MINGW32 ~/mygit/mygitroom (master)
+$ git log
+commit e18e0a00cd44d025fb32ee2b3c93b734dccdc152
+Author: 201344085_LyuSeongMin <j1344085@naver.com>
+Date:   Fri Sep 9 18:38:54 2016 +0900
+    index.html 파일 :거주지 추가
+commit 7f1c9fb5855963212486c3ee8ebc0b2d2a8860db
+Author: 201344085_LyuSeongMin <j1344085@naver.com>
+Date:   Fri Sep 9 18:36:37 2016 +0900
+    index.html 파일 등록
+ 
+ 
+(마스터는 원본파일을 보관하기 위하여 쓴다)
+브런치는 일종의 테스트를 하기 위한 것 이라고 볼 수 있다
+테스트가 정상적으로 성공하면 원본파일과 통합한다
+브런치는 디렉토리의 개념이 아니다 !!
+
+git branch         현재 브랜치 리스트 확인
+git branch 브랜치명     브랜치 추가
+git checkout job-A    브랜치로 이동
+git checkout -        바로 전단계 브랜치로 이동
+git merge job-A        job-A 에서 커밋된 내용을 마스터로 이동
+git branch -D job-A    강제로 (-D) job-A 브런치를 삭제한다
+git checkout -b job-B    job-B 를 만들고 스위칭(-b)까지 한다
+ 
+alias javac='C:/Program\ Files/Java/jdk1.8.0_101/bin/java.exe'
+alias 거는 명령어 !!
+ 
+ 
+ 
+403@4-403-05 MINGW32 ~/mygit/project1 (master)
+$ git add A01.java
+ 
+403@4-403-05 MINGW32 ~/mygit/project1 (master)
+$ git diff
+ 
+403@4-403-05 MINGW32 ~/mygit/project1 (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+        modified:   A01.java
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .A01.java.swp
+        A01.class
+
+403@4-403-05 MINGW32 ~/mygit/project1 (master)
+$ git commit -m "자바 계산기 코딩 확장자 = .java"
+[master b2ef758] 자바 계산기 코딩 확장자 = .java
+ 1 file changed, 37 insertions(+), 3 deletions(-)
+ 
+403@4-403-05 MINGW32 ~/mygit/project1 (master)
+$ git log
+commit b2ef7586f36ec5b630301a217180ff4df0f0f16e
+Author: 201344085_LyuSeongMin <j1344085@naver.com>
+Date:   Fri Sep 9 19:53:11 2016 +0900
+    자바 계산기 코딩 확장자 = .java
+ 
+ 
+A01.java의  소스는 다음과 같다
+ 
+import java.util.*;
+class A01 {
+        void input(){
+                Scanner sss = new Scanner(System.in);
+                System.out.print("num1 :");
+                int num1 = sss.nextInt();
+                System.out.print("num2 :");
+                int num2 = sss.nextInt();
+                System.out.print("Operater(+,-,*,/) : ");
+                String op = sss.next();
+                int result = cal(num1, num2, op);
+                print("result is : " + result);
+        }
+
+        int cal(int num1, int num2, String op){
+                int result = 0;
+                if(op.equals("+"))
+                        result = num1+num2;
+                else if(op.equals("-"))
+                        result = num1-num2;
+                else if(op.equals("*"))
+                        result = num1*num2;
+                else if(op.equals("/"))
+                        result = num1/num2;
+                return result;
+        }
+
+        void print(String str){
+                System.out.println(str);
+        }
+        public static void main(String[] args){
+                new A01().input();
+        }
+}

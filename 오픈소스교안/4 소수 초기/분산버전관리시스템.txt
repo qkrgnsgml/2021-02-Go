@@ -1,0 +1,56 @@
+Git 
+분산 버전 관리 시스템
+GitHub 
+깃으로 관리하는 프로젝트를 올려 둘 수 있는 사이트
+
+local repository 
+git init 명령어로 생성되는 디렉토리(폴더)를 말한다.
+커밋, 커밋을 구성하는 객체, 스테이지가 모두 로컬 저장소에 저장됩니다.
+
+remote repository
+로컬 저장소를 upload하는 곳. GitHub
+
+
+working tree
+워크트리, 워킹 디렉토리, 작업 디렉토리, 작업 폴더
+
+Git 저장소
+정확하게는 로컬 저장소. 하지만 넓은 의미로는 작업 폴더를 의미.
+
+
+git init
+로컬 리포지토리 지정
+
+초기 등록
+git config --global user.email "이메일주소"
+git config --global user.name "유저이름"
+
+
+git status
+상태 확인
+
+git log
+커밋 리스트 확인
+
+git add Readme.txt
+스테이지에 올릴 때
+
+git commit -m "내용"
+버전을 확정
+
+
+원격 저장소 사용을 위해서 GitHub 가입 필요
+가입 후 원격 저장소를 만든다 (New Repository)
+
+git remote add origin https://github.com/inhadeepblue/study.git
+
+git push origin master
+업로드 명령
+
+
+git clone 주소 .
+원격 리포지토리에서 복제(다운로드)
+
+git pull origin master
+원격 리포지토리의 변경 사항을 로컬로 동기화
+

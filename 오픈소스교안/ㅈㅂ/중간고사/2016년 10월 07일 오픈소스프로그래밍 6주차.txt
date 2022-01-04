@@ -1,0 +1,55 @@
+git log --pretty=oneline
+
+깃 로그를 라인 한줄로 보여준다.
+
+git commit --amend
+마지막 커밋 내용 수정 가능.
+
+git checkout -- <작업파일>
+working area에 있는 작업 내용을 지운다
+
+<->
+
+git reset -- <작업파일>
+stage에리어에 있는 작업 내용을 지운다
+
+git checkout HEAD <파일명> == git reset HEAD <파일명>
+작업 파일 수정내용을 stage영역 working 영역 둘다 지워
+버린다.
+
+reset 옵션
+--hard 작업 stage commit 전부 삭제
+--mixed 작업내역외에 전부 삭제
+--soft 커밋 내역만 삭제
+
+커밋 아이디 앞에 4자리 복사
+
+ git reset --hard <커밋 아이디 앞 4자리>
+  커밋 삭제
+
+ git reset --hard ORIG_HEAD
+  실수로 삭제시킨 내역을 복구시키고 싶을때
+  ORIG_HEAD reset이 커밋내역을 지울때 백업해두는 곳
+
+ HEAD
+  제일 마지막 커밋의 포인터(?)
+
+ git reset -- hard HEAD~<숫자>
+  최근 커밋 <숫자>개를 취소
+
+ git reset 이력을 지운다
+ git revert HEAD 이력을 지우는 기능을 커밋에 넣는다.
+ git revert HEAD ORIG_HEAD 가능
+ 
+stash 임시저장 기능!!!
+
+ git stash 현재상태 저장
+ add 한 내용
+
+ git stash list 저장된 상태 보여줌
+ 
+ git stash pop 젤 위에 저장된 stash를 뽑아온다(stash에 저장된 내용 지운다)
+
+ git stash drop 맨 위에 있는 stash를 삭제한다
+
+ git stash apply 제일 위에 저장된 stash를 뽑아온다(내용을 지우지 않는다.)

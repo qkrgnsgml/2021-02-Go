@@ -1,0 +1,26 @@
+git & github
+git : 개인의 로컬에서 관리하는것
+github : 인터넷 서버에 올려서 모두에게 공개하는것
+
+
+http://class.lifeword.net
+아이디 : j1344085
+공지 과제 강의자료 등등
+
+https://github.com/
+아이디 : j1344085
+내꺼 : https://github.com/j1344085/j1344085.git
+
+다운로드 : https://git-for-windows.github.io/
+Use Git from Git Bash only 선택하기
+
+git 사용법
+git bash 를 사용
+git init 		로 초기화를 한다
+git status 		로 상태 파악
+git add 파일이름	으로 스테이지에 올림
+git commit -m "메세지"	로 커밋함
+git log 		로 버전관리를 볼수있음 (커밋의 횟수만큼)
+git diff		워킹트리에 있는 내용과 커밋에 제출된 내용이 같은지 다른지 확인할수 있다
+
+버전관리란 log를 보는것

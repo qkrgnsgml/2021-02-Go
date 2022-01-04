@@ -1,0 +1,43 @@
+RYUN@DESKTOP-GD8I5ET MINGW64 ~/mygit-room/git-work-2 (VendingM)
+$ javac -encoding utf-8 VendingMachine.java
+한글깨짐을 방지하는 컴파일
+
+RYUN@DESKTOP-GD8I5ET MINGW64 ~/mygit-room/git-work-2 (VendingM)
+$ java -Dfile.encoding=UTF-8  B01
+컴파일된걸 실행
+
+git branch -a (원격으로 연결한것 까지 전부 보여줌)
+git merge --no-ff 브런치명 (머지한것의 기록을 남기겠다)
+git log --graph (이쁘장하게 기록을 보여줌)
+git branch -D 브런치명 (머지가 안되었다 하더라도 강제삭제)
+
+RYUN@DESKTOP-GD8I5ET MINGW64 ~/mygit-room/git-work-2 (master)
+$ git merge job-B
+Auto-merging sample
+CONFLICT (content): Merge conflict in sample
+Automatic merge failed; fix conflicts and then commit the result.
+
+RYUN@DESKTOP-GD8I5ET MINGW64 ~/mygit-room/git-work-2 (master|MERGING)
+$
+
+같은파일의 같은라인에 다른내용이라서 충동한 경우 이렇게 나옴
+
+vi 로 파일 보면
+과제 하기싫다
+진짜 하기싫다
+목마르다
+<<<<<<< HEAD
+물 마시고 싶다
+=======
+음료수를 먹고싶다
+>>>>>>> job-B
+
+
+이렇게 나옴
+
+
+git remote -v (원격으로 연결된 깃 저장소를 확인가능)
+git clone 주소 (원격으로 작업할 장소를 가져옴, 자동으로 git init 해줌)
+
+www.gitignore.io
+원치않는 파일은 status 에 나오지 않게 하겠다

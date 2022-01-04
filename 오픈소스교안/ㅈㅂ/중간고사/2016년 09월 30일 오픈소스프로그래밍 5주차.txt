@@ -1,0 +1,54 @@
+fork 리포지토리 복사
+
+git clone [원격저장소url]
+현재 폴더하위에 저장소의 이름이 만들어지면서
+원격 저장소의 파일을 가져온다 (복제의 개념)
+
+git remote -v
+현재 원격저장소를 확인하는 명령어
+
+git remote add [별칭] [원격저장소]
+아무때나 가능
+
+클론상태가 아닐때는 완전히 빈 저장소이여야지만 push가 가능하다
+
+git push [별칭] [브런치]
+브런치에 있는걸 올리겟다
+
+git remote rm [별칭]
+원격저장소와의 연결을 끊겠다
+
+git remote rename [현재 별칭] [바꾸어질 별칭]
+현재 별칭을 바꾸어질 별칭으로 바꾼다
+
+git fetch [별칭] [리모트브랜치]
+원격으로 부터 파일을 가져오는 기능
+로컬에서 commit한 파일을 원격저장소에 업로드전에 동기화 필요
+통합은 하지 않으므로 merge를 실행후 push 해야됨
+---> 
+git branch -a
+git merge origin/master
+git push
+
+rejected=거절됬다
+
+git branch -a
+현재 원격저장소랑 연결된 브랜치를 보여줌
+
+remotes/a/b
+git checkout /a/b
+여기에 들어감
+
+git pull [별칭] [브랜치명]
+패치와 머지를 동시에
+
+git push origin --all
+모든 브랜치도 같이 푸쉬해준다.
+
+git push -u [식별자] [로컬브랜치]
+로컨브랜치를 식별자에 전송시켜줌
+
+git checkout -b branch명 별칭/branch명
+** 안될시에
+git fetch <별칭> branch명
+으로 branch를 가져와준다.
